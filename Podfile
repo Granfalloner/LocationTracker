@@ -3,6 +3,7 @@ platform :ios, '11.0'
 target 'LTKit' do
   use_frameworks!
 
+  pod 'SwiftLint', '~> 0.29'
 
   target 'LTKitTests' do
     inherit! :search_paths
