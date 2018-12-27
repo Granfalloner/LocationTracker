@@ -74,12 +74,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F00399621D586DB00AE4AED /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5FAA0CC721D57673006E1BAE /* Main.storyboard */,
+				5FAA0CCA21D57674006E1BAE /* Assets.xcassets */,
+				5FAA0CCC21D57674006E1BAE /* LaunchScreen.storyboard */,
+				5FAA0CCF21D57674006E1BAE /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5F00399721D586E200AE4AED /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				5FAA0CC321D57673006E1BAE /* AppDelegate.swift */,
+				5FAA0CC521D57673006E1BAE /* ViewController.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		5F00399821D586F800AE4AED /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5FAA0CDA21D57674006E1BAE /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5F00399921D5870000AE4AED /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				5FAA0CD821D57674006E1BAE /* LocationTrackerTests.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		5F00399A21D5870C00AE4AED /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5FAA0CE521D57674006E1BAE /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5F00399B21D5871300AE4AED /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				5FAA0CE321D57674006E1BAE /* LocationTrackerUITests.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		5F00399C21D5875F00AE4AED /* LTApp */ = {
+			isa = PBXGroup;
+			children = (
+				5FAA0CC221D57673006E1BAE /* App */,
+				5FAA0CD721D57674006E1BAE /* Tests */,
+				5FAA0CE221D57674006E1BAE /* UITests */,
+			);
+			path = LTApp;
+			sourceTree = "<group>";
+		};
 		5FAA0CB721D57673006E1BAE = {
 			isa = PBXGroup;
 			children = (
-				5FAA0CC221D57673006E1BAE /* LocationTracker */,
-				5FAA0CD721D57674006E1BAE /* LocationTrackerTests */,
-				5FAA0CE221D57674006E1BAE /* LocationTrackerUITests */,
+				5F00399C21D5875F00AE4AED /* LTApp */,
 				5FAA0CC121D57673006E1BAE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,35 +154,31 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5FAA0CC221D57673006E1BAE /* LocationTracker */ = {
+		5FAA0CC221D57673006E1BAE /* App */ = {
 			isa = PBXGroup;
 			children = (
-				5FAA0CC321D57673006E1BAE /* AppDelegate.swift */,
-				5FAA0CC521D57673006E1BAE /* ViewController.swift */,
-				5FAA0CC721D57673006E1BAE /* Main.storyboard */,
-				5FAA0CCA21D57674006E1BAE /* Assets.xcassets */,
-				5FAA0CCC21D57674006E1BAE /* LaunchScreen.storyboard */,
-				5FAA0CCF21D57674006E1BAE /* Info.plist */,
+				5F00399721D586E200AE4AED /* Sources */,
+				5F00399621D586DB00AE4AED /* Resources */,
 			);
-			path = LocationTracker;
+			path = App;
 			sourceTree = "<group>";
 		};
-		5FAA0CD721D57674006E1BAE /* LocationTrackerTests */ = {
+		5FAA0CD721D57674006E1BAE /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				5FAA0CD821D57674006E1BAE /* LocationTrackerTests.swift */,
-				5FAA0CDA21D57674006E1BAE /* Info.plist */,
+				5F00399921D5870000AE4AED /* Sources */,
+				5F00399821D586F800AE4AED /* Resources */,
 			);
-			path = LocationTrackerTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
-		5FAA0CE221D57674006E1BAE /* LocationTrackerUITests */ = {
+		5FAA0CE221D57674006E1BAE /* UITests */ = {
 			isa = PBXGroup;
 			children = (
-				5FAA0CE321D57674006E1BAE /* LocationTrackerUITests.swift */,
-				5FAA0CE521D57674006E1BAE /* Info.plist */,
+				5F00399B21D5871300AE4AED /* Sources */,
+				5F00399A21D5870C00AE4AED /* Resources */,
 			);
-			path = LocationTrackerUITests;
+			path = UITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,7 +490,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DU7A7D6MU6;
-				INFOPLIST_FILE = LocationTracker/Info.plist;
+				INFOPLIST_FILE = LTApp/App/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,7 +508,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DU7A7D6MU6;
-				INFOPLIST_FILE = LocationTracker/Info.plist;
+				INFOPLIST_FILE = LTApp/App/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -468,10 +524,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DU7A7D6MU6;
-				INFOPLIST_FILE = LocationTrackerTests/Info.plist;
+				INFOPLIST_FILE = LTApp/Tests/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -489,10 +544,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DU7A7D6MU6;
-				INFOPLIST_FILE = LocationTrackerTests/Info.plist;
+				INFOPLIST_FILE = LTApp/Tests/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -512,7 +566,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DU7A7D6MU6;
-				INFOPLIST_FILE = LocationTrackerUITests/Info.plist;
+				INFOPLIST_FILE = LTApp/UITests/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -520,6 +574,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.granfalloner.LocationTrackerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = LocationTracker;
@@ -532,7 +587,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DU7A7D6MU6;
-				INFOPLIST_FILE = LocationTrackerUITests/Info.plist;
+				INFOPLIST_FILE = LTApp/UITests/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -540,6 +595,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.granfalloner.LocationTrackerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = LocationTracker;
