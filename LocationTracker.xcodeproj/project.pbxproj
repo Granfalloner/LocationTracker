@@ -486,6 +486,7 @@
 				TargetAttributes = {
 					5F28BCCB21D58A1D005FD57C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					5F28BCD321D58A1D005FD57C = {
 						CreatedOnToolsVersion = 10.1;
@@ -811,6 +812,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6E2176CFE2997C59F094CE3B /* Pods-LTKit.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -829,6 +831,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.granfalloner.LTKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -840,6 +843,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 40B042040060F0D7177D3301 /* Pods-LTKit.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -869,7 +873,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 94936C46806D13DB2EA7C29E /* Pods-LTKitTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DU7A7D6MU6;
 				INFOPLIST_FILE = LTKit/Tests/Resources/Info.plist;
@@ -890,7 +893,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B3FEC7E03E739175F10D3FEF /* Pods-LTKitTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DU7A7D6MU6;
 				INFOPLIST_FILE = LTKit/Tests/Resources/Info.plist;
