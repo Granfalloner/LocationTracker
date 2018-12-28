@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F232FFB21D59F5B00507311 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F232FFA21D59F5B00507311 /* LocationService.swift */; };
+		5F232FFD21D59F7E00507311 /* CoreLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F232FFC21D59F7E00507311 /* CoreLocationService.swift */; };
+		5F23300021D59FAA00507311 /* LocationTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F232FFF21D59FAA00507311 /* LocationTypes.swift */; };
 		5F28BCD521D58A1D005FD57C /* LTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F28BCCC21D58A1D005FD57C /* LTKit.framework */; };
 		5F28BCDC21D58A1D005FD57C /* LTKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28BCDB21D58A1D005FD57C /* LTKitTests.swift */; };
-		5F28BCDE21D58A1D005FD57C /* LTKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F28BCCE21D58A1D005FD57C /* LTKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F28BCE121D58A1D005FD57C /* LTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F28BCCC21D58A1D005FD57C /* LTKit.framework */; };
 		5F28BCE221D58A1D005FD57C /* LTKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F28BCCC21D58A1D005FD57C /* LTKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5FAA0CC421D57673006E1BAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA0CC321D57673006E1BAE /* AppDelegate.swift */; };
@@ -82,8 +84,10 @@
 		05B75D7CDDA4FD2DAC594AFD /* Pods-LocationTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTrackerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocationTrackerTests/Pods-LocationTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
 		40B042040060F0D7177D3301 /* Pods-LTKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTKit/Pods-LTKit.release.xcconfig"; sourceTree = "<group>"; };
 		5EF5236D54180E79D3F65BBD /* Pods_LocationTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocationTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F232FFA21D59F5B00507311 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		5F232FFC21D59F7E00507311 /* CoreLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationService.swift; sourceTree = "<group>"; };
+		5F232FFF21D59FAA00507311 /* LocationTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTypes.swift; sourceTree = "<group>"; };
 		5F28BCCC21D58A1D005FD57C /* LTKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LTKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F28BCCE21D58A1D005FD57C /* LTKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTKit.h; sourceTree = "<group>"; };
 		5F28BCCF21D58A1D005FD57C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F28BCD421D58A1D005FD57C /* LTKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LTKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F28BCDB21D58A1D005FD57C /* LTKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTKitTests.swift; sourceTree = "<group>"; };
@@ -252,6 +256,16 @@
 			path = LTApp;
 			sourceTree = "<group>";
 		};
+		5F232FFE21D59F9300507311 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				5F232FFF21D59FAA00507311 /* LocationTypes.swift */,
+				5F232FFA21D59F5B00507311 /* LocationService.swift */,
+				5F232FFC21D59F7E00507311 /* CoreLocationService.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		5F28BCCD21D58A1D005FD57C /* Kit */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,7 +320,7 @@
 		5F28BCEF21D58A85005FD57C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				5F28BCCE21D58A1D005FD57C /* LTKit.h */,
+				5F232FFE21D59F9300507311 /* Location */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -368,7 +382,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F28BCDE21D58A1D005FD57C /* LTKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,6 +793,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F232FFB21D59F5B00507311 /* LocationService.swift in Sources */,
+				5F23300021D59FAA00507311 /* LocationTypes.swift in Sources */,
+				5F232FFD21D59F7E00507311 /* CoreLocationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
