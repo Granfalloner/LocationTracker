@@ -24,6 +24,10 @@
 	<string>Location access needed for area monitoring</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location access needed for area monitoring</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

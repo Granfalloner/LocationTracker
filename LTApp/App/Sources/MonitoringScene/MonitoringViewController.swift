@@ -22,15 +22,20 @@ class MonitoringViewController: UIViewController {
 
     // MARK: - Ivars
 
+    @IBOutlet weak var placeholderView: UIView!
+    @IBOutlet weak var contentView: UIView!
+
     @IBOutlet weak var longitudeTextField: UITextField!
     @IBOutlet weak var latitudeTextField: UITextField!
 
     @IBOutlet weak var radiusLabel: UILabel!
     @IBOutlet weak var minRadiusLabel: UILabel!
     @IBOutlet weak var maxRadiusLabel: UILabel!
+    @IBOutlet weak var currentStatusLabel: UILabel!
 
     @IBOutlet weak var radiusSlider: UISlider!
     @IBOutlet weak var monitoringButton: UIButton!
+    @IBOutlet weak var enableLocationButton: UIButton!
 
     var presenter: MonitoringPresenterProtocol = MonitoringPresenter()
     let bag = DisposeBag()
@@ -49,7 +54,9 @@ class MonitoringViewController: UIViewController {
 extension MonitoringViewController: MonitoringViewProtocol {
     var longitude: Observable<CLLocationDegrees> {
         return longitudeTextField.rx.text.asObservable()
+            .debug("[Long]")
             .map { $0.flatMap { CLLocationDegrees($0) } ?? 0 }
+            .debug("[LongConv]")
     }
 
     var latitude: Observable<CLLocationDegrees> {
@@ -64,6 +71,10 @@ extension MonitoringViewController: MonitoringViewProtocol {
 
     var startMonitoring: Observable<Void> {
         return monitoringButton.rx.tap.asObservable()
+    }
+
+    var enableLocation: Observable<Void> {
+        return enableLocationButton.rx.tap.asObservable()
     }
 }
 
@@ -92,6 +103,28 @@ private extension MonitoringViewController {
                 return "\(radiusTitle), km: \(stringValue ?? "-")"
             }
             .bind(to: radiusLabel.rx.text)
+            .disposed(by: bag)
+
+        presenter.locationEnabled
+            .subscribe(onNext: { [weak self] enabled in
+                self?.placeholderView.isHidden = enabled
+                self?.contentView.isHidden = !enabled
+            })
+            .disposed(by: bag)
+
+        presenter.enableLocationTitle
+            .bind(to: enableLocationButton.rx.title())
+            .disposed(by: bag)
+
+        presenter.monitoringActive
+            .map { $0 ? NSLocalizedString("Update monitoring", comment: "")
+                      : NSLocalizedString("Start monitoring", comment: "") }
+            .bind(to: monitoringButton.rx.title())
+            .disposed(by: bag)
+
+        presenter.monitoringState
+            .map { "\(NSLocalizedString("Current status", comment: "")): \($0)" }
+            .bind(to: currentStatusLabel.rx.text)
             .disposed(by: bag)
     }
 }

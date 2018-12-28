@@ -11,17 +11,24 @@ import CoreLocation
 import RxSwift
 
 protocol MonitoringViewProtocol: AnyObject {
+
     var longitude: Observable<CLLocationDegrees> { get }
     var latitude: Observable<CLLocationDegrees> { get }
 
     var radius: Observable<CLLocationDistance> { get }
 
     var startMonitoring: Observable<Void> { get }
+    var enableLocation: Observable<Void> { get }
 }
 
 protocol MonitoringPresenterProtocol {
 
     var locationEnabled: Observable<Bool> { get }
+    var enableLocationTitle: Observable<String> { get }
+
+    var monitoringActive: Observable<Bool> { get }
+    var monitoringState: Observable<String> { get }
+
     var maxRadius: CLLocationDistance { get }
 
     var view: MonitoringViewProtocol? { get set }
