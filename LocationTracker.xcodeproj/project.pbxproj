@@ -14,13 +14,16 @@
 		5F28BCDC21D58A1D005FD57C /* LTKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28BCDB21D58A1D005FD57C /* LTKitTests.swift */; };
 		5F28BCE121D58A1D005FD57C /* LTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F28BCCC21D58A1D005FD57C /* LTKit.framework */; };
 		5F28BCE221D58A1D005FD57C /* LTKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F28BCCC21D58A1D005FD57C /* LTKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5FAA0CC421D57673006E1BAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA0CC321D57673006E1BAE /* AppDelegate.swift */; };
 		5FAA0CC621D57673006E1BAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA0CC521D57673006E1BAE /* ViewController.swift */; };
 		5FAA0CC921D57673006E1BAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FAA0CC721D57673006E1BAE /* Main.storyboard */; };
 		5FAA0CCB21D57674006E1BAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FAA0CCA21D57674006E1BAE /* Assets.xcassets */; };
 		5FAA0CCE21D57674006E1BAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FAA0CCC21D57674006E1BAE /* LaunchScreen.storyboard */; };
 		5FAA0CD921D57674006E1BAE /* LocationTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA0CD821D57674006E1BAE /* LocationTrackerTests.swift */; };
 		5FAA0CE421D57674006E1BAE /* LocationTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA0CE321D57674006E1BAE /* LocationTrackerUITests.swift */; };
+		5FE03E5321D643D7009DCB12 /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE03E4521D63F5A009DCB12 /* DependencyInjection.swift */; };
+		5FE03E5421D643DC009DCB12 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE03E4121D63EDE009DCB12 /* ServiceFactory.swift */; };
+		5FE03E5521D643E0009DCB12 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE03E4321D63F0A009DCB12 /* AppServices.swift */; };
+		5FE03E5621D643E4009DCB12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA0CC321D57673006E1BAE /* AppDelegate.swift */; };
 		7E13373FF88A2E20FB56BC77 /* Pods_LocationTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EF5236D54180E79D3F65BBD /* Pods_LocationTracker.framework */; };
 		A088340572589F39C3737738 /* Pods_LocationTrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECAA3C61E2F1CC191926FAFA /* Pods_LocationTrackerUITests.framework */; };
 		BD648908C49F2261BCA1F306 /* Pods_LTKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 764280CE2F6A4F7D507B3DBC /* Pods_LTKitTests.framework */; };
@@ -105,6 +108,9 @@
 		5FAA0CDF21D57674006E1BAE /* LocationTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FAA0CE321D57674006E1BAE /* LocationTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTrackerUITests.swift; sourceTree = "<group>"; };
 		5FAA0CE521D57674006E1BAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FE03E4121D63EDE009DCB12 /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
+		5FE03E4321D63F0A009DCB12 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
+		5FE03E4521D63F5A009DCB12 /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
 		6BC6A67FE276C4D0FA9DFEFD /* Pods-LocationTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocationTracker/Pods-LocationTracker.release.xcconfig"; sourceTree = "<group>"; };
 		6E2176CFE2997C59F094CE3B /* Pods-LTKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTKit/Pods-LTKit.debug.xcconfig"; sourceTree = "<group>"; };
 		764280CE2F6A4F7D507B3DBC /* Pods_LTKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,8 +214,8 @@
 		5F00399721D586E200AE4AED /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				5FAA0CC321D57673006E1BAE /* AppDelegate.swift */,
 				5FAA0CC521D57673006E1BAE /* ViewController.swift */,
+				5FE03E4021D63ED3009DCB12 /* General */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -373,6 +379,17 @@
 				5F00399A21D5870C00AE4AED /* Resources */,
 			);
 			path = UITests;
+			sourceTree = "<group>";
+		};
+		5FE03E4021D63ED3009DCB12 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				5FE03E4521D63F5A009DCB12 /* DependencyInjection.swift */,
+				5FE03E4121D63EDE009DCB12 /* ServiceFactory.swift */,
+				5FE03E4321D63F0A009DCB12 /* AppServices.swift */,
+				5FAA0CC321D57673006E1BAE /* AppDelegate.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -812,7 +829,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FAA0CC621D57673006E1BAE /* ViewController.swift in Sources */,
-				5FAA0CC421D57673006E1BAE /* AppDelegate.swift in Sources */,
+				5FE03E5421D643DC009DCB12 /* ServiceFactory.swift in Sources */,
+				5FE03E5521D643E0009DCB12 /* AppServices.swift in Sources */,
+				5FE03E5621D643E4009DCB12 /* AppDelegate.swift in Sources */,
+				5FE03E5321D643D7009DCB12 /* DependencyInjection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
