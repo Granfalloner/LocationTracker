@@ -28,7 +28,9 @@ public protocol LocationService {
 
     var maximumMonitoringRadius: CLLocationDistance { get }
 
-    func addMonitoring(for area: Area) throws
+    var monitoredAreas: Observable<[Area]> { get }
+
+    func startMonitoring(for area: Area) throws
 
     func getState(for area: Area) -> Observable<CLRegionState>
 

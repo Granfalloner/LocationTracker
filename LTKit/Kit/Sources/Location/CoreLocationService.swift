@@ -16,7 +16,9 @@ public class CoreLocationService: NSObject {
 
     private let locationManager: CLLocationManager
 
-    private(set) var authorizationStatusVariable = BehaviorSubject<CLAuthorizationStatus>(value: .notDetermined)
+    private let authorizationStatusVariable = BehaviorSubject<CLAuthorizationStatus>(value: .notDetermined)
+    private let monitoredAreasVariable = BehaviorSubject<[Area]>(value: [])
+
     private var regionToObservablesMap = [String: BehaviorSubject<CLRegionState>]()
 
     // MARK: - Overrides
@@ -24,6 +26,7 @@ public class CoreLocationService: NSObject {
     public override init() {
         locationManager = CLLocationManager()
         super.init()
+        fetchMonitoredRegions()
         locationManager.delegate = self
     }
 }
@@ -57,7 +60,11 @@ extension CoreLocationService: LocationService {
         return locationManager.maximumRegionMonitoringDistance
     }
 
-    public func addMonitoring(for area: Area) throws {
+    public var monitoredAreas: Observable<[Area]> {
+        return monitoredAreasVariable
+    }
+
+    public func startMonitoring(for area: Area) throws {
         guard isMonitoringEnabled else { throw LocationServiceErrors.operationNotPermitted }
 
         switch CLLocationManager.authorizationStatus() {
@@ -72,6 +79,7 @@ extension CoreLocationService: LocationService {
         guard let observable = regionToObservablesMap[area.region.identifier] else {
             let newObservable = BehaviorSubject<CLRegionState>(value: .unknown)
             regionToObservablesMap[area.region.identifier] = newObservable
+            locationManager.requestState(for: area.region)
             return newObservable
         }
         return observable
@@ -91,7 +99,12 @@ extension CoreLocationService: CLLocationManagerDelegate {
     }
 
     public func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion) {
-        // ...
+        guard let circularRegion = region as? CLCircularRegion else { return }
+        do {
+            monitoredAreasVariable.onNext(try monitoredAreasVariable.value() + [Area(region: circularRegion)])
+        } catch {
+            /// - ToDo: error logging
+        }
     }
 
     public func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
@@ -111,5 +124,15 @@ extension CoreLocationService: CLLocationManagerDelegate {
                                 monitoringDidFailFor region: CLRegion?, withError error: Error) {
         guard let region = region else { return }
         regionToObservablesMap[region.identifier]?.onError(error)
+    }
+}
+
+// MARK: - Private
+
+private extension CoreLocationService {
+    func fetchMonitoredRegions() {
+        let areas = locationManager.monitoredRegions
+            .compactMap { ($0 as? CLCircularRegion).map { Area(region: $0) } }
+        monitoredAreasVariable.onNext(areas)
     }
 }

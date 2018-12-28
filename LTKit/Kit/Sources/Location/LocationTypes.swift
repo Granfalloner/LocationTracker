@@ -9,6 +9,17 @@
 import Foundation
 import CoreLocation
 
-public struct Area {
-    var region: CLCircularRegion
+public struct Area: Hashable {
+    public var region: CLCircularRegion
+
+    public init(region: CLCircularRegion) {
+        self.region = region
+    }
+
+    public init(latitude: CLLocationDegrees, longitude: CLLocationDegrees,
+                radius: CLLocationDistance, identifier: String) {
+        let center = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let circularRegion = CLCircularRegion(center: center, radius: radius, identifier: identifier)
+        self.init(region: circularRegion)
+    }
 }
