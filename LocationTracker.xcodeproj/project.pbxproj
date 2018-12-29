@@ -20,6 +20,8 @@
 		5FAA0CCE21D57674006E1BAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FAA0CCC21D57674006E1BAE /* LaunchScreen.storyboard */; };
 		5FAA0CD921D57674006E1BAE /* LocationTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA0CD821D57674006E1BAE /* LocationTrackerTests.swift */; };
 		5FAA0CE421D57674006E1BAE /* LocationTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA0CE321D57674006E1BAE /* LocationTrackerUITests.swift */; };
+		5FAF673B21D7D201006253F6 /* ReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF673A21D7D201006253F6 /* ReachabilityService.swift */; };
+		5FAF673D21D7D332006253F6 /* SCReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF673C21D7D332006253F6 /* SCReachabilityService.swift */; };
 		5FE03E5321D643D7009DCB12 /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE03E4521D63F5A009DCB12 /* DependencyInjection.swift */; };
 		5FE03E5421D643DC009DCB12 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE03E4121D63EDE009DCB12 /* ServiceFactory.swift */; };
 		5FE03E5521D643E0009DCB12 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE03E4321D63F0A009DCB12 /* AppServices.swift */; };
@@ -113,6 +115,8 @@
 		5FAA0CE321D57674006E1BAE /* LocationTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTrackerUITests.swift; sourceTree = "<group>"; };
 		5FAA0CE521D57674006E1BAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FAF673621D6ED4E006253F6 /* Poland.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Poland.gpx; sourceTree = "<group>"; };
+		5FAF673A21D7D201006253F6 /* ReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityService.swift; sourceTree = "<group>"; };
+		5FAF673C21D7D332006253F6 /* SCReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCReachabilityService.swift; sourceTree = "<group>"; };
 		5FE03E4121D63EDE009DCB12 /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		5FE03E4321D63F0A009DCB12 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
 		5FE03E4521D63F5A009DCB12 /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
@@ -338,6 +342,7 @@
 		5F28BCEF21D58A85005FD57C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				5FAF673721D7CDC3006253F6 /* Reachability */,
 				5F232FFE21D59F9300507311 /* Location */,
 			);
 			path = Sources;
@@ -401,6 +406,15 @@
 				5FAF673621D6ED4E006253F6 /* Poland.gpx */,
 			);
 			path = Locations;
+			sourceTree = "<group>";
+		};
+		5FAF673721D7CDC3006253F6 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				5FAF673A21D7D201006253F6 /* ReachabilityService.swift */,
+				5FAF673C21D7D332006253F6 /* SCReachabilityService.swift */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 		5FE03E4021D63ED3009DCB12 /* General */ = {
@@ -851,6 +865,8 @@
 			files = (
 				5F232FFB21D59F5B00507311 /* LocationService.swift in Sources */,
 				5F23300021D59FAA00507311 /* LocationTypes.swift in Sources */,
+				5FAF673B21D7D201006253F6 /* ReachabilityService.swift in Sources */,
+				5FAF673D21D7D332006253F6 /* SCReachabilityService.swift in Sources */,
 				5F232FFD21D59F7E00507311 /* CoreLocationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
