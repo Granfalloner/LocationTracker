@@ -15,6 +15,8 @@
 		5F28BCDC21D58A1D005FD57C /* LTKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28BCDB21D58A1D005FD57C /* LTKitTests.swift */; };
 		5F28BCE121D58A1D005FD57C /* LTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F28BCCC21D58A1D005FD57C /* LTKit.framework */; };
 		5F28BCE221D58A1D005FD57C /* LTKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F28BCCC21D58A1D005FD57C /* LTKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F5F081B21D7EFCA003E8D45 /* PreferencesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5F081A21D7EFCA003E8D45 /* PreferencesService.swift */; };
+		5F5F081D21D7EFE4003E8D45 /* UserDefaultsPreferenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5F081C21D7EFE4003E8D45 /* UserDefaultsPreferenceService.swift */; };
 		5FAA0CC921D57673006E1BAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FAA0CC721D57673006E1BAE /* Main.storyboard */; };
 		5FAA0CCB21D57674006E1BAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FAA0CCA21D57674006E1BAE /* Assets.xcassets */; };
 		5FAA0CCE21D57674006E1BAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FAA0CCC21D57674006E1BAE /* LaunchScreen.storyboard */; };
@@ -102,6 +104,8 @@
 		5F28BCD421D58A1D005FD57C /* LTKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LTKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F28BCDB21D58A1D005FD57C /* LTKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTKitTests.swift; sourceTree = "<group>"; };
 		5F28BCDD21D58A1D005FD57C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F5F081A21D7EFCA003E8D45 /* PreferencesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesService.swift; sourceTree = "<group>"; };
+		5F5F081C21D7EFE4003E8D45 /* UserDefaultsPreferenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsPreferenceService.swift; sourceTree = "<group>"; };
 		5FAA0CC021D57673006E1BAE /* LocationTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FAA0CC321D57673006E1BAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FAA0CC821D57673006E1BAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -346,6 +350,15 @@
 				5F232FFE21D59F9300507311 /* Location */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		5F5F081921D7EFBB003E8D45 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				5F5F081A21D7EFCA003E8D45 /* PreferencesService.swift */,
+				5F5F081C21D7EFE4003E8D45 /* UserDefaultsPreferenceService.swift */,
+			);
+			path = Preferences;
 			sourceTree = "<group>";
 		};
 		5FAA0CB721D57673006E1BAE = {
@@ -863,10 +876,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F5F081D21D7EFE4003E8D45 /* UserDefaultsPreferenceService.swift in Sources */,
 				5F232FFB21D59F5B00507311 /* LocationService.swift in Sources */,
 				5F23300021D59FAA00507311 /* LocationTypes.swift in Sources */,
 				5FAF673B21D7D201006253F6 /* ReachabilityService.swift in Sources */,
 				5FAF673D21D7D332006253F6 /* SCReachabilityService.swift in Sources */,
+				5F5F081B21D7EFCA003E8D45 /* PreferencesService.swift in Sources */,
 				5F232FFD21D59F7E00507311 /* CoreLocationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
