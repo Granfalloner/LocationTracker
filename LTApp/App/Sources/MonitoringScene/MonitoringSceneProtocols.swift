@@ -9,6 +9,7 @@
 import Foundation
 import CoreLocation
 import RxSwift
+import LTKit
 
 protocol MonitoringViewProtocol: AnyObject {
 
@@ -28,6 +29,7 @@ protocol MonitoringPresenterProtocol {
 
     var monitoringActive: Observable<Bool> { get }
     var monitoringState: Observable<String> { get }
+    var monitoredArea: Observable<Area?> { get }
 
     var maxRadius: CLLocationDistance { get }
 

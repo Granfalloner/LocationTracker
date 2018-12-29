@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F1B1C9521D6E4C100739346 /* AreaOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B1C9321D6E14600739346 /* AreaOverlay.swift */; };
 		5F232FFB21D59F5B00507311 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F232FFA21D59F5B00507311 /* LocationService.swift */; };
 		5F232FFD21D59F7E00507311 /* CoreLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F232FFC21D59F7E00507311 /* CoreLocationService.swift */; };
 		5F23300021D59FAA00507311 /* LocationTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F232FFF21D59FAA00507311 /* LocationTypes.swift */; };
@@ -26,6 +27,7 @@
 		5FE03E6421D64CBC009DCB12 /* MonitoringPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE03E6121D64CBB009DCB12 /* MonitoringPresenter.swift */; };
 		5FE03E6521D64CBC009DCB12 /* MonitoringSceneProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE03E6221D64CBB009DCB12 /* MonitoringSceneProtocols.swift */; };
 		5FE03E6621D64CBC009DCB12 /* MonitoringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE03E6321D64CBB009DCB12 /* MonitoringViewController.swift */; };
+		5FE03E6C21D6A2D4009DCB12 /* AreaAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE03E6B21D6A2D4009DCB12 /* AreaAnnotation.swift */; };
 		7E13373FF88A2E20FB56BC77 /* Pods_LocationTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EF5236D54180E79D3F65BBD /* Pods_LocationTracker.framework */; };
 		A088340572589F39C3737738 /* Pods_LocationTrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECAA3C61E2F1CC191926FAFA /* Pods_LocationTrackerUITests.framework */; };
 		BD648908C49F2261BCA1F306 /* Pods_LTKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 764280CE2F6A4F7D507B3DBC /* Pods_LTKitTests.framework */; };
@@ -89,6 +91,7 @@
 		05B75D7CDDA4FD2DAC594AFD /* Pods-LocationTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTrackerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocationTrackerTests/Pods-LocationTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
 		40B042040060F0D7177D3301 /* Pods-LTKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTKit/Pods-LTKit.release.xcconfig"; sourceTree = "<group>"; };
 		5EF5236D54180E79D3F65BBD /* Pods_LocationTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocationTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F1B1C9321D6E14600739346 /* AreaOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaOverlay.swift; sourceTree = "<group>"; };
 		5F232FFA21D59F5B00507311 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		5F232FFC21D59F7E00507311 /* CoreLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationService.swift; sourceTree = "<group>"; };
 		5F232FFF21D59FAA00507311 /* LocationTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTypes.swift; sourceTree = "<group>"; };
@@ -115,6 +118,7 @@
 		5FE03E6121D64CBB009DCB12 /* MonitoringPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringPresenter.swift; sourceTree = "<group>"; };
 		5FE03E6221D64CBB009DCB12 /* MonitoringSceneProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringSceneProtocols.swift; sourceTree = "<group>"; };
 		5FE03E6321D64CBB009DCB12 /* MonitoringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringViewController.swift; sourceTree = "<group>"; };
+		5FE03E6B21D6A2D4009DCB12 /* AreaAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaAnnotation.swift; sourceTree = "<group>"; };
 		6BC6A67FE276C4D0FA9DFEFD /* Pods-LocationTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocationTracker/Pods-LocationTracker.release.xcconfig"; sourceTree = "<group>"; };
 		6E2176CFE2997C59F094CE3B /* Pods-LTKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTKit/Pods-LTKit.debug.xcconfig"; sourceTree = "<group>"; };
 		764280CE2F6A4F7D507B3DBC /* Pods_LTKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -402,6 +406,8 @@
 				5FE03E6221D64CBB009DCB12 /* MonitoringSceneProtocols.swift */,
 				5FE03E6121D64CBB009DCB12 /* MonitoringPresenter.swift */,
 				5FE03E6321D64CBB009DCB12 /* MonitoringViewController.swift */,
+				5FE03E6B21D6A2D4009DCB12 /* AreaAnnotation.swift */,
+				5F1B1C9321D6E14600739346 /* AreaOverlay.swift */,
 			);
 			path = MonitoringScene;
 			sourceTree = "<group>";
@@ -850,8 +856,10 @@
 				5FE03E6421D64CBC009DCB12 /* MonitoringPresenter.swift in Sources */,
 				5FE03E5421D643DC009DCB12 /* ServiceFactory.swift in Sources */,
 				5FE03E6521D64CBC009DCB12 /* MonitoringSceneProtocols.swift in Sources */,
+				5FE03E6C21D6A2D4009DCB12 /* AreaAnnotation.swift in Sources */,
 				5FE03E5521D643E0009DCB12 /* AppServices.swift in Sources */,
 				5FE03E6621D64CBC009DCB12 /* MonitoringViewController.swift in Sources */,
+				5F1B1C9521D6E4C100739346 /* AreaOverlay.swift in Sources */,
 				5FE03E5621D643E4009DCB12 /* AppDelegate.swift in Sources */,
 				5FE03E5321D643D7009DCB12 /* DependencyInjection.swift in Sources */,
 			);

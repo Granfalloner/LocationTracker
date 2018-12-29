@@ -45,21 +45,31 @@ extension MonitoringPresenter: MonitoringPresenterProtocol {
     }
 
     var monitoringActive: Observable<Bool> {
-        return location.monitoredAreas
-            .map { $0.contains(where: { $0.region.identifier == MonitoringPresenter.defaultRegionId }) }
+        return monitoredArea.map { $0 != nil }
     }
 
     var monitoringState: Observable<String> {
-        return area
-            .debug("[Premon]")
-            .flatMapFirst { [location] in location.getState(for: $0) }
+        return monitoredArea
+            .flatMapLatest { [location] area -> Observable<CLRegionState?> in
+                if let area = area {
+                    return location.getState(for: area).map { $0 }
+                } else {
+                    return .just(nil)
+                }
+            }
             .map { state in
+                guard let state = state else { return NSLocalizedString("Not monitoring", comment: "") }
                 switch state {
                 case .unknown: return NSLocalizedString("Unknown", comment: "")
                 case .inside: return NSLocalizedString("Inside", comment: "")
                 case .outside: return NSLocalizedString("Outside", comment: "")
                 }
             }
+    }
+
+    var monitoredArea: Observable<Area?> {
+        return location.monitoredAreas
+            .map { $0.first(where: { $0.region.identifier == MonitoringPresenter.defaultRegionId }) }
     }
 
     var maxRadius: CLLocationDistance {

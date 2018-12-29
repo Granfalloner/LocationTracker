@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-public struct Area: Hashable {
+public struct Area: Equatable, Hashable {
     public var region: CLCircularRegion
 
     public init(region: CLCircularRegion) {
@@ -20,6 +20,8 @@ public struct Area: Hashable {
                 radius: CLLocationDistance, identifier: String) {
         let center = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let circularRegion = CLCircularRegion(center: center, radius: radius, identifier: identifier)
+        circularRegion.notifyOnEntry = true
+        circularRegion.notifyOnExit = true
         self.init(region: circularRegion)
     }
 }

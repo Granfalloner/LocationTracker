@@ -101,7 +101,13 @@ extension CoreLocationService: CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion) {
         guard let circularRegion = region as? CLCircularRegion else { return }
         do {
-            monitoredAreasVariable.onNext(try monitoredAreasVariable.value() + [Area(region: circularRegion)])
+            var curValue = try monitoredAreasVariable.value()
+            if let index = curValue.firstIndex(where: { $0.region.identifier == circularRegion.identifier }) {
+                curValue[index] = Area(region: circularRegion)
+                monitoredAreasVariable.onNext(curValue)
+            } else {
+                monitoredAreasVariable.onNext(curValue + [Area(region: circularRegion)])
+            }
         } catch {
             /// - ToDo: error logging
         }
@@ -122,8 +128,8 @@ extension CoreLocationService: CLLocationManagerDelegate {
 
     public func locationManager(_ manager: CLLocationManager,
                                 monitoringDidFailFor region: CLRegion?, withError error: Error) {
-        guard let region = region else { return }
-        regionToObservablesMap[region.identifier]?.onError(error)
+//        guard let region = region else { return }
+//        regionToObservablesMap[region.identifier]?.onError(error)
     }
 }
 
