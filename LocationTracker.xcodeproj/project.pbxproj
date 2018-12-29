@@ -112,12 +112,15 @@
 		5FAA0CDF21D57674006E1BAE /* LocationTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FAA0CE321D57674006E1BAE /* LocationTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTrackerUITests.swift; sourceTree = "<group>"; };
 		5FAA0CE521D57674006E1BAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FAF673621D6ED4E006253F6 /* Poland.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Poland.gpx; sourceTree = "<group>"; };
 		5FE03E4121D63EDE009DCB12 /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		5FE03E4321D63F0A009DCB12 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
 		5FE03E4521D63F5A009DCB12 /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
 		5FE03E6121D64CBB009DCB12 /* MonitoringPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringPresenter.swift; sourceTree = "<group>"; };
 		5FE03E6221D64CBB009DCB12 /* MonitoringSceneProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringSceneProtocols.swift; sourceTree = "<group>"; };
 		5FE03E6321D64CBB009DCB12 /* MonitoringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringViewController.swift; sourceTree = "<group>"; };
+		5FE03E6721D6969E009DCB12 /* Cupertino.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Cupertino.gpx; sourceTree = "<group>"; };
+		5FE03E6921D697AC009DCB12 /* ZeroLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ZeroLocation.gpx; sourceTree = "<group>"; };
 		5FE03E6B21D6A2D4009DCB12 /* AreaAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaAnnotation.swift; sourceTree = "<group>"; };
 		6BC6A67FE276C4D0FA9DFEFD /* Pods-LocationTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocationTracker/Pods-LocationTracker.release.xcconfig"; sourceTree = "<group>"; };
 		6E2176CFE2997C59F094CE3B /* Pods-LTKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTKit/Pods-LTKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -211,6 +214,7 @@
 		5F00399621D586DB00AE4AED /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5FAF673521D6ED2C006253F6 /* Locations */,
 				5FAA0CC721D57673006E1BAE /* Main.storyboard */,
 				5FAA0CCA21D57674006E1BAE /* Assets.xcassets */,
 				5FAA0CCC21D57674006E1BAE /* LaunchScreen.storyboard */,
@@ -387,6 +391,16 @@
 				5F00399A21D5870C00AE4AED /* Resources */,
 			);
 			path = UITests;
+			sourceTree = "<group>";
+		};
+		5FAF673521D6ED2C006253F6 /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				5FE03E6721D6969E009DCB12 /* Cupertino.gpx */,
+				5FE03E6921D697AC009DCB12 /* ZeroLocation.gpx */,
+				5FAF673621D6ED4E006253F6 /* Poland.gpx */,
+			);
+			path = Locations;
 			sourceTree = "<group>";
 		};
 		5FE03E4021D63ED3009DCB12 /* General */ = {
