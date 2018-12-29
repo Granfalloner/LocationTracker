@@ -13,4 +13,8 @@ import LTKit
 protocol ServiceFactory {
 
     func createLocationService() -> LocationService
+
+    func createReachabilityService() -> ReachabilityService
+
+    func createPreferencesService() -> PreferencesService
 }

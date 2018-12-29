@@ -17,3 +17,11 @@ import LTKit
 protocol LocationServiceClient {
     var location: LocationService { get }
 }
+
+protocol ReachabilityServiceClient {
+    var reachability: ReachabilityService { get }
+}
+
+protocol PreferencesServiceClient {
+    var prefs: PreferencesService { get }
+}

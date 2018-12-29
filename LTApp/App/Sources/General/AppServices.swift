@@ -16,11 +16,15 @@ class AppServices {
     // MARK: - Ivars
 
     fileprivate var location: LocationService!
+    fileprivate var reachability: ReachabilityService!
+    fileprivate var prefs: PreferencesService!
 
     // MARK: - Public
 
     init() {
         location = createLocationService()
+        reachability = createReachabilityService()
+        prefs = createPreferencesService()
     }
 }
 
@@ -32,6 +36,14 @@ extension AppServices: ServiceFactory {
         // Service configuration can be applied here
         return CoreLocationService()
     }
+
+    func createReachabilityService() -> ReachabilityService {
+        return SCReachabilityService(with: "www.apple.com")!
+    }
+
+    func createPreferencesService() -> PreferencesService {
+        return UserDefaultsPreferencesService()
+    }
 }
 
 // MARK: - Dependency injection
@@ -39,5 +51,17 @@ extension AppServices: ServiceFactory {
 extension LocationServiceClient {
     var location: LocationService {
         return AppServices.shared.location
+    }
+}
+
+extension ReachabilityServiceClient {
+    var reachability: ReachabilityService {
+        return AppServices.shared.reachability
+    }
+}
+
+extension PreferencesServiceClient {
+    var prefs: PreferencesService {
+        return AppServices.shared.prefs
     }
 }
