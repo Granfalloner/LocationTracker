@@ -18,6 +18,8 @@ protocol MonitoringViewProtocol: AnyObject {
 
     var radius: Observable<CLLocationDistance> { get }
 
+    var wifi: Observable<String> { get }
+
     var startMonitoring: Observable<Void> { get }
     var enableLocation: Observable<Void> { get }
 }

@@ -41,6 +41,8 @@ class MonitoringViewController: UIViewController {
     @IBOutlet weak var radiusLabel: UILabel!
     @IBOutlet weak var minRadiusLabel: UILabel!
     @IBOutlet weak var maxRadiusLabel: UILabel!
+
+    @IBOutlet weak var wifiTextField: UITextField!
     @IBOutlet weak var currentStatusLabel: UILabel!
 
     @IBOutlet weak var radiusSlider: UISlider!
@@ -81,6 +83,10 @@ extension MonitoringViewController: MonitoringViewProtocol {
     var radius: Observable<CLLocationDistance> {
         return radiusSlider.rx.value.asObservable()
             .map { CLLocationDistance($0) }
+    }
+
+    var wifi: Observable<String> {
+        return wifiTextField.rx.text.asObservable().map { $0 ?? "" }
     }
 
     var startMonitoring: Observable<Void> {
@@ -206,6 +212,8 @@ private extension MonitoringViewController {
         presenter.monitoredArea
             .subscribe(onNext: { [weak self] area in
                 self?.refreshMonitoredAnnotation(for: area)
+                self?.wifiTextField.text = area?.wifi
+                self?.wifiTextField.sendActions(for: .valueChanged)
             })
             .disposed(by: bag)
     }
@@ -216,14 +224,13 @@ private extension MonitoringViewController {
         let name = NSLocalizedString("Monitored area", comment: "")
         let region = CLCircularRegion(center: mapView.centerCoordinate, radius: CLLocationDistance(radiusSlider.value),
                                       identifier: name)
-        let area = Area(region: region)
-        let annotation = AreaAnnotation(area: area, isActive: false)
+        let annotation = AreaAnnotation(region: region, isActive: false)
         mapView.addAnnotation(annotation)
         return annotation
     }
 
     func addOverlay(for annotation: AreaAnnotation) {
-        let overlay = AreaOverlay(center: annotation.area.region.center, radius: annotation.area.region.radius,
+        let overlay = AreaOverlay(center: annotation.region.center, radius: annotation.region.radius,
                                   isActive: annotation.isActive)
         mapView.addOverlay(overlay)
     }
@@ -254,7 +261,7 @@ private extension MonitoringViewController {
             mapView.removeAnnotation(monitoredAnnotation)
         }
         if let area = area {
-            monitoredAnnotation = AreaAnnotation(area: area, isActive: true)
+            monitoredAnnotation = AreaAnnotation(region: area.region, isActive: true)
             monitoredAnnotation.map { mapView.addAnnotation($0) }
             monitoredAnnotation.map { addOverlay(for: $0) }
         }

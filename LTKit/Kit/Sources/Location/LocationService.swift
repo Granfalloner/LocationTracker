@@ -28,11 +28,11 @@ public protocol LocationService {
 
     var maximumMonitoringRadius: CLLocationDistance { get }
 
-    var monitoredAreas: Observable<[Area]> { get }
+    var monitoredRegions: Observable<[CLCircularRegion]> { get }
 
-    func startMonitoring(for area: Area) throws
+    func startMonitoring(for region: CLCircularRegion) throws
 
-    func getState(for area: Area) -> Observable<CLRegionState>
+    func getState(for region: CLCircularRegion) -> Observable<CLRegionState>
 
-    func stopMonitoring(for area: Area)
+    func stopMonitoring(for region: CLCircularRegion)
 }

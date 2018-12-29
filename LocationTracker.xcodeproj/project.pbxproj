@@ -10,7 +10,7 @@
 		5F1B1C9521D6E4C100739346 /* AreaOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B1C9321D6E14600739346 /* AreaOverlay.swift */; };
 		5F232FFB21D59F5B00507311 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F232FFA21D59F5B00507311 /* LocationService.swift */; };
 		5F232FFD21D59F7E00507311 /* CoreLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F232FFC21D59F7E00507311 /* CoreLocationService.swift */; };
-		5F23300021D59FAA00507311 /* LocationTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F232FFF21D59FAA00507311 /* LocationTypes.swift */; };
+		5F23300021D59FAA00507311 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F232FFF21D59FAA00507311 /* Area.swift */; };
 		5F28BCD521D58A1D005FD57C /* LTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F28BCCC21D58A1D005FD57C /* LTKit.framework */; };
 		5F28BCDC21D58A1D005FD57C /* LTKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28BCDB21D58A1D005FD57C /* LTKitTests.swift */; };
 		5F28BCE121D58A1D005FD57C /* LTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F28BCCC21D58A1D005FD57C /* LTKit.framework */; };
@@ -98,7 +98,7 @@
 		5F1B1C9321D6E14600739346 /* AreaOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaOverlay.swift; sourceTree = "<group>"; };
 		5F232FFA21D59F5B00507311 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		5F232FFC21D59F7E00507311 /* CoreLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationService.swift; sourceTree = "<group>"; };
-		5F232FFF21D59FAA00507311 /* LocationTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTypes.swift; sourceTree = "<group>"; };
+		5F232FFF21D59FAA00507311 /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		5F28BCCC21D58A1D005FD57C /* LTKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LTKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F28BCCF21D58A1D005FD57C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F28BCD421D58A1D005FD57C /* LTKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LTKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -285,7 +285,6 @@
 		5F232FFE21D59F9300507311 /* Location */ = {
 			isa = PBXGroup;
 			children = (
-				5F232FFF21D59FAA00507311 /* LocationTypes.swift */,
 				5F232FFA21D59F5B00507311 /* LocationService.swift */,
 				5F232FFC21D59F7E00507311 /* CoreLocationService.swift */,
 			);
@@ -346,10 +345,20 @@
 		5F28BCEF21D58A85005FD57C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				5F5F081821D7ECF5003E8D45 /* Model */,
+				5F5F081921D7EFBB003E8D45 /* Preferences */,
 				5FAF673721D7CDC3006253F6 /* Reachability */,
 				5F232FFE21D59F9300507311 /* Location */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		5F5F081821D7ECF5003E8D45 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5F232FFF21D59FAA00507311 /* Area.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5F5F081921D7EFBB003E8D45 /* Preferences */ = {
@@ -878,7 +887,7 @@
 			files = (
 				5F5F081D21D7EFE4003E8D45 /* UserDefaultsPreferenceService.swift in Sources */,
 				5F232FFB21D59F5B00507311 /* LocationService.swift in Sources */,
-				5F23300021D59FAA00507311 /* LocationTypes.swift in Sources */,
+				5F23300021D59FAA00507311 /* Area.swift in Sources */,
 				5FAF673B21D7D201006253F6 /* ReachabilityService.swift in Sources */,
 				5FAF673D21D7D332006253F6 /* SCReachabilityService.swift in Sources */,
 				5F5F081B21D7EFCA003E8D45 /* PreferencesService.swift in Sources */,

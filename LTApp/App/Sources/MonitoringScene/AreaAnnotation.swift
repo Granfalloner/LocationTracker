@@ -14,13 +14,13 @@ class AreaAnnotation: NSObject {
 
     // MARK: - Ivars
 
-    let area: Area
+    let region: CLCircularRegion
     let isActive: Bool
 
     // MARK: - Public
 
-    init(area: Area, isActive: Bool) {
-        self.area = area
+    init(region: CLCircularRegion, isActive: Bool) {
+        self.region = region
         self.isActive = isActive
     }
 }
@@ -29,7 +29,7 @@ class AreaAnnotation: NSObject {
 
 extension AreaAnnotation: MKAnnotation {
     var coordinate: CLLocationCoordinate2D {
-        return area.region.center
+        return region.center
     }
 
     var title: String? {
