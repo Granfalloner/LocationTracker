@@ -46,10 +46,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                 <subviews>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XuH-0S-pFu">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="402"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="361.5"/>
                                     </mapView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AlV-np-6Zs">
-                                        <rect key="frame" x="8" y="410" width="359" height="221"/>
+                                        <rect key="frame" x="8" y="369.5" width="359" height="261.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3At-gd-xks">
                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="20.5"/>
@@ -109,8 +109,14 @@
                                                     <constraint firstItem="4sy-Ux-uKy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bYx-lm-i4g" secondAttribute="leading" constant="150" id="AVg-8M-yFq"/>
                                                 </constraints>
                                             </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Region status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ot5-AB-SGU">
+                                                <rect key="frame" x="0.0" y="90.5" width="359" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Eil-hU-TzF">
-                                                <rect key="frame" x="0.0" y="90.5" width="359" height="30"/>
+                                                <rect key="frame" x="0.0" y="131" width="359" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wi-Fi:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aeg-bE-WoH">
                                                         <rect key="frame" x="0.0" y="0.0" width="45.5" height="30"/>
@@ -126,14 +132,25 @@
                                                     </textField>
                                                 </subviews>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ot5-AB-SGU">
-                                                <rect key="frame" x="0.0" y="140.5" width="359" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UIX-Xy-BzW">
+                                                <rect key="frame" x="0.0" y="181" width="359" height="20.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wi-FI status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tG6-p4-3ml">
+                                                        <rect key="frame" x="0.0" y="0.0" width="97.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Xq-sI-2RL">
+                                                        <rect key="frame" x="107.5" y="0.0" width="251.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VvJ-4P-85C">
-                                                <rect key="frame" x="0.0" y="181" width="359" height="40"/>
+                                                <rect key="frame" x="0.0" y="221.5" width="359" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="hwa-y4-D2O"/>
                                                 </constraints>
@@ -180,6 +197,7 @@
                         <outlet property="placeholderView" destination="1OK-Si-BPT" id="fvX-c5-9z1"/>
                         <outlet property="radiusLabel" destination="vhF-Al-UGv" id="wuR-J9-RZU"/>
                         <outlet property="radiusSlider" destination="3uZ-qz-gOS" id="oz3-Fu-m7p"/>
+                        <outlet property="wifiStatusLabel" destination="4Xq-sI-2RL" id="2Fq-Vn-x3c"/>
                         <outlet property="wifiTextField" destination="9WB-Wg-Z2f" id="ttC-vt-Ksd"/>
                     </connections>
                 </viewController>

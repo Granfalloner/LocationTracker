@@ -14,7 +14,6 @@ import LTKit
 class MonitoringPresenter: LocationServiceClient, ReachabilityServiceClient, PreferencesServiceClient {
 
     static let defaultRegionId = "defaultRegionId"
-    static let defaultWifi = "Wi-Fi"
 
     // MARK: - Ivars
 
@@ -23,7 +22,7 @@ class MonitoringPresenter: LocationServiceClient, ReachabilityServiceClient, Pre
     }
 
     private var area = Observable<Area>.never()
-    private var wifi = BehaviorSubject<String>(value: MonitoringPresenter.defaultWifi)
+    private var wifi = BehaviorSubject<String?>(value: nil)
 
     let bag = DisposeBag()
 }
@@ -50,8 +49,19 @@ extension MonitoringPresenter: MonitoringPresenterProtocol {
         return monitoredArea.map { $0 != nil }
     }
 
-    var monitoringState: Observable<String> {
+    var monitoredArea: Observable<Area?> {
+        let monitoredRegion = location.monitoredRegions
+            .map { $0.first(where: { $0.identifier == MonitoringPresenter.defaultRegionId }) }
+
+        return Observable.combineLatest(monitoredRegion, wifi) { (region, wifi) -> Area? in
+            guard let region = region else { return nil }
+            return Area(region: region, wifi: wifi)
+        }
+    }
+
+    var regionState: Observable<String> {
         return monitoredArea
+            .debug()
             .flatMapLatest { [location] area -> Observable<CLRegionState?> in
                 if let area = area {
                     return location.getState(for: area.region).map { $0 }
@@ -69,14 +79,18 @@ extension MonitoringPresenter: MonitoringPresenterProtocol {
             }
     }
 
-    var monitoredArea: Observable<Area?> {
-        let monitoredRegion = location.monitoredRegions
-            .map { $0.first(where: { $0.identifier == MonitoringPresenter.defaultRegionId }) }
-
-        return Observable.combineLatest(monitoredRegion, wifi) { (region, wifi) -> Area? in
-            guard let region = region else { return nil }
-            return Area(region: region, wifi: wifi)
-        }
+    var wifiState: Observable<String> {
+        return reachability.state
+            .withLatestFrom(wifi) { ($0, $1) }
+            .map { (state, wifi) in
+                switch state {
+                case .notReachable: return NSLocalizedString("No network", comment: "")
+                case .cellular: return NSLocalizedString("Cellular only", comment: "")
+                case .wifi(let name):
+                    return name == wifi ? NSLocalizedString("Connected to monitored wi-fi", comment: "")
+                                        : NSLocalizedString("Connected to other wi-fi", comment: "")
+                }
+            }
     }
 
     var maxRadius: CLLocationDistance {
@@ -90,6 +104,17 @@ private extension MonitoringPresenter {
     func setup() {
         guard let view = view else { return }
 
+        do {
+            try reachability.startMonitoring()
+        } catch {
+            /// - TODO: error reporting
+        }
+
+        reachability.state
+            .debug()
+            .subscribe()
+            .disposed(by: bag)
+
         view.enableLocation
             .withLatestFrom(location.authorizationStatus)
             .subscribe(onNext: { [weak self] status in
@@ -97,7 +122,7 @@ private extension MonitoringPresenter {
             })
             .disposed(by: bag)
 
-        wifi.onNext(prefs.lastWiFi ?? MonitoringPresenter.defaultWifi)
+        wifi.onNext(prefs.lastWiFi)
 
         area = Observable.combineLatest(view.latitude,
                                         view.longitude,

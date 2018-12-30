@@ -17,7 +17,6 @@ protocol MonitoringViewProtocol: AnyObject {
     var latitude: Observable<CLLocationDegrees> { get }
 
     var radius: Observable<CLLocationDistance> { get }
-
     var wifi: Observable<String> { get }
 
     var startMonitoring: Observable<Void> { get }
@@ -30,8 +29,10 @@ protocol MonitoringPresenterProtocol {
     var enableLocationTitle: Observable<String> { get }
 
     var monitoringActive: Observable<Bool> { get }
-    var monitoringState: Observable<String> { get }
     var monitoredArea: Observable<Area?> { get }
+
+    var regionState: Observable<String> { get }
+    var wifiState: Observable<String> { get }
 
     var maxRadius: CLLocationDistance { get }
 

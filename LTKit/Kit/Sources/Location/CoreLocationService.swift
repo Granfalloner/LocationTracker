@@ -82,6 +82,7 @@ extension CoreLocationService: LocationService {
             locationManager.requestState(for: region)
             return newObservable
         }
+        locationManager.requestState(for: region)
         return observable
     }
 

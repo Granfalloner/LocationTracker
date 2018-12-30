@@ -104,6 +104,7 @@
 		5F28BCD421D58A1D005FD57C /* LTKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LTKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F28BCDB21D58A1D005FD57C /* LTKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTKitTests.swift; sourceTree = "<group>"; };
 		5F28BCDD21D58A1D005FD57C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F57C56421D82C0A0078D911 /* LocationTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LocationTracker.entitlements; sourceTree = "<group>"; };
 		5F5F081A21D7EFCA003E8D45 /* PreferencesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesService.swift; sourceTree = "<group>"; };
 		5F5F081C21D7EFE4003E8D45 /* UserDefaultsPreferenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsPreferenceService.swift; sourceTree = "<group>"; };
 		5FAA0CC021D57673006E1BAE /* LocationTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -373,6 +374,7 @@
 		5FAA0CB721D57673006E1BAE = {
 			isa = PBXGroup;
 			children = (
+				5F57C56421D82C0A0078D911 /* LocationTracker.entitlements */,
 				5F28BCEB21D58A53005FD57C /* LTKit */,
 				5F00399C21D5875F00AE4AED /* LTApp */,
 				5FAA0CC121D57673006E1BAE /* Products */,
@@ -599,6 +601,9 @@
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
+							};
+							com.apple.WAC = {
+								enabled = 0;
 							};
 						};
 					};

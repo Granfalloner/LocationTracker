@@ -41,11 +41,12 @@ class MonitoringViewController: UIViewController {
     @IBOutlet weak var radiusLabel: UILabel!
     @IBOutlet weak var minRadiusLabel: UILabel!
     @IBOutlet weak var maxRadiusLabel: UILabel!
-
-    @IBOutlet weak var wifiTextField: UITextField!
+    @IBOutlet weak var radiusSlider: UISlider!
     @IBOutlet weak var currentStatusLabel: UILabel!
 
-    @IBOutlet weak var radiusSlider: UISlider!
+    @IBOutlet weak var wifiTextField: UITextField!
+    @IBOutlet weak var wifiStatusLabel: UILabel!
+
     @IBOutlet weak var monitoringButton: UIButton!
     @IBOutlet weak var enableLocationButton: UIButton!
 
@@ -204,9 +205,13 @@ private extension MonitoringViewController {
             .bind(to: monitoringButton.rx.title())
             .disposed(by: bag)
 
-        presenter.monitoringState
-            .map { "\(NSLocalizedString("Current status", comment: "")): \($0)" }
+        presenter.regionState
+            .map { "\(NSLocalizedString("Region status", comment: "")): \($0)" }
             .bind(to: currentStatusLabel.rx.text)
+            .disposed(by: bag)
+
+        presenter.wifiState
+            .bind(to: wifiStatusLabel.rx.text)
             .disposed(by: bag)
 
         presenter.monitoredArea
