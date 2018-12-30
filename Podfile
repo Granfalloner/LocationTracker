@@ -17,6 +17,7 @@ target 'LocationTracker' do
   use_frameworks!
 
   pod 'RxCocoa', '~> 4.4'
+  pod 'IQKeyboardManagerSwift', '~> 6.0'
 
   target 'LocationTrackerTests' do
     inherit! :search_paths
